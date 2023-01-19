@@ -1,7 +1,6 @@
 import Box from 'components/Box/Box';
 import PropTypes from 'prop-types';
 import { StatsText } from 'components/Statistics/Statistics.styled';
-import { backgroundColor } from 'styled-system';
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
