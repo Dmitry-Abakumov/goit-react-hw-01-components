@@ -1,24 +1,25 @@
 import Box from 'components/Box/Box';
-import { Friend, Chip } from 'components/FriendsList/FriendsList.styled';
+import FriendsListItem from 'components/FriendListItem/FriendListItem';
 import PropTypes from 'prop-types';
 
-const FriendsList = ({ friends }) => {
+const FriendList = ({ friends }) => {
   return (
     <Box display="flex" justifyContent="center" textAlign="center" as="ul">
       {friends.map(({ avatar, name, isOnline, id }) => (
-        <Friend key={id}>
-          <Chip isOnline={isOnline} />
-          <img src={avatar} alt="User avatar" width="48" />
-          <p>{name}</p>
-        </Friend>
+        <FriendsListItem
+          key={id}
+          avatar={avatar}
+          name={name}
+          isOnline={isOnline}
+        />
       ))}
     </Box>
   );
 };
 
-export default FriendsList;
+export default FriendList;
 
-FriendsList.propTypes = {
+FriendList.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.shape({
       avatar: PropTypes.string.isRequired,

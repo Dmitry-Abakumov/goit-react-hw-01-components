@@ -8,7 +8,7 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const Statistics = ({ title = null, stats }) => {
+const Statistics = ({ title, stats }) => {
   return (
     <Box pt={25} pb={25} pl={15} as="section" textAlign="center">
       {title && <h2>{title}</h2>}
@@ -27,9 +27,9 @@ const Statistics = ({ title = null, stats }) => {
 
 export default Statistics;
 
-Statistics.protoTypes = {
-  title: PropTypes.string.isRequired,
-  data: PropTypes.arrayOf(
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
